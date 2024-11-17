@@ -98,6 +98,9 @@ function logCartItems() {
  * @returns { number } returns the total price of items in your cart
  */
 function calculateTotalCartPrice() {
+  let sum = 0;
+  cart.forEach((item) => (sum += items[item].price) )
+  return sum
   // TODO: Loop through your cart and return the total price of all items in your cart
 }
 
