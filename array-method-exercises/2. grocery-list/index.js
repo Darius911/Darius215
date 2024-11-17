@@ -9,7 +9,8 @@ const items = [
   { id: 8, name: "sourdough loaf", price: 5.5, categoryId: 4, inventory: 100 },
 ];
 
-const cart = [];
+let cart = [];
+cart = [...items];
 
 
 // ------------------ Complete the functions written below ------------------------------ //
@@ -84,12 +85,10 @@ function filterItemsByCategoryId(categoryId) {
 
 function logCartItems() {
   // TODO: Loop through your cart and use the indexes to log the names of all items in your cart
-  for (let i = 0; i < items.length; i++) {
-    cart.push(items[i].name);
-  }
   
-  console.log(cart);
-    
+  for (let i = 0; i < cart.length; i++) {
+    console.log(`Item ${i + 1}: ${cart[i].name}`);
+  }
     
 }
 
