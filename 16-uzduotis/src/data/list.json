@@ -1,0 +1,28 @@
+
+[
+    {
+        "id": 1,
+        "title": "AS Mokausi JavaScript",
+        "content": "Start with the basics of JavaScript and progress to advanced concepts.",
+        "img": "src/assets/3.jpg",
+        
+        "selflearn": true
+    },
+    {
+        "id": 2,
+        "title": "As Mokausi CSS",
+        "content": "Understand the fundamentals of CSS and how to style web pages effectively.",
+        "img": "src/assets/2.jpg",
+        
+        "selflearn": true
+    },
+    {
+        "id": 3,
+        "title": "As mokausi HTML",
+        "content": "Learn the essential elements of HTML5 for building modern web pages.",
+        "img": "src/assets/1.jpg",
+        
+        "selflearn": true
+    }
+    
+]
