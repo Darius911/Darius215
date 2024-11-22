@@ -1,8 +1,8 @@
 import "./Box.css";
 
-export default function Box(proms) {
+export default function Box(changeClass) {
   return (
-    <div className={proms.class}>
+    <div className={changeClass.class}>
       
     </div>
   );
