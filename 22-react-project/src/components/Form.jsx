@@ -53,9 +53,9 @@ export default function Form() {
          
         
         />
-         {errors.name?.type === "required" && <p>Name field cannot be empty</p>}
+         {errors.name?.type === "required" && <p className="text-danger">Name field cannot be empty</p>}
          {errors.name?.type === "pattern" && (
-          <p>Name must start with an uppercase letter</p>
+          <p className="text-danger">Name must start with an uppercase letter</p>
         )}
       </div>
 
@@ -72,8 +72,8 @@ export default function Form() {
           className="form-control"
           {...register("type", { required: true, minLength: 2, maxLength: 50 })}
         />
-        {errors.type?.type === "minLength" && <p>field shoud be min 2 symbol </p>}
-        {errors.type?.type === "maxLength" && <p>field shoud be max 50 symbol </p>}
+        {errors.type?.type === "minLength" && <p className="text-danger">field shoud be min 2 symbol </p>}
+        {errors.type?.type === "maxLength" && <p className="text-danger">field shoud be max 50 symbol </p>}
       </div>
 
       <div className="mb-3">
@@ -89,12 +89,13 @@ export default function Form() {
           className="form-control"
           {...register("breed", { required: true, pattern: /^[A-Z][a-z]+$/, minLength: 5, maxLength: 100 })}
         />
-         {errors.breed?.type === "required" && <p>Name field cannot be empty</p>}
-         {errors.breed?.type === "minLength" && <p>field shoud be min 5 symbol </p>}
-         {errors.breed?.type === "maxLength" && <p>field shoud be max 100 symbol </p>}
+         {errors.breed?.type === "required" && <p className="text-danger">Name field cannot be empty</p>}
          {errors.breed?.type === "pattern" && (
-          <p>Name must start with an uppercase letter</p>
+          <p className="text-danger">Name must start with an uppercase letter</p>
         )}
+         {errors.breed?.type === "minLength" && <p className="text-danger">field shoud be min 5 symbol </p>}
+         {errors.breed?.type === "maxLength" && <p className="text-danger">field shoud be max 100 symbol </p>}
+         
       </div>
 
       <div className="mb-3">
@@ -110,6 +111,8 @@ export default function Form() {
           className="form-control"
           {...register("age", { min: 1, max: 100 })}
         />
+        {errors.age?.type === "min" && <p className="text-danger">min age can be 1 </p>}
+        {errors.age?.type === "max" && <p className="text-danger">max age can be 100 </p>}
       </div>
 
       <div className="mb-3">
@@ -124,8 +127,9 @@ export default function Form() {
           id="weight"
           step="0.01"
           className="form-control"
-          {...register("weight")}
+          {...register("weight", { min: 0.05})}
         />
+         {errors.weight?.type === "min" && <p className="text-danger">min weight can be 0.05 </p>}
       </div>
 
       <div className="mb-3">
@@ -139,9 +143,9 @@ export default function Form() {
           type="text"
           id="gender"
           className="form-control"
-          {...register("gender")}
+          {...register("gender", {required: true})}
         />
-        {errors.gender?.type === "required" && <p>Gender field cannot be empty</p>}
+        {errors.gender?.type === "required" && <p className="text-danger">Gender field cannot be empty</p>}
       </div>
 
       <button
