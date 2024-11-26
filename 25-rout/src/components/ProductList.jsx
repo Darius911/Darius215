@@ -14,7 +14,7 @@ export default function ProductList() {
           return (
             <li key={product.id}>
               {product.name}
-              <Link to={`/products/${product.id}`}  > View details</Link>
+              <Link to={`products/${product.name}`}  > View details</Link>
             </li>
           )
         })}
