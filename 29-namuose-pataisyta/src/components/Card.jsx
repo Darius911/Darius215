@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
-
-import { useParams } from "react-router";
+import { Link } from "react-router";
 
 export default function Card() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { id } = useParams();
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://api.github.com/users/${id}`
-        );
+        const response = await fetch(`https://api.github.com/users`);
         const data = await response.json();
 
         setData(data);
@@ -38,10 +33,18 @@ export default function Card() {
 
   return (
     <>
-    <p>{data.userId}</p>
-    <p>{data.id}</p>
-    <p>{data.title}</p>
-    <p>{data.body}</p>
-  </>
+      {data.map((post) => {
+        return (
+          <div key={post.id} className="col-lg-4">
+            <img className="bd-placeholder-img rounded-circle" width="140" height="140" role="img"  src={post.avatar_url} alt="" />
+            <h2 className="fw-normal">{post.login}</h2>
+            
+            <p>
+            <Link className="btn btn-secondary" to={`/posts/${post.id}`}>view detailds</Link>
+            </p>
+          </div>
+        );
+      })}
+    </>
   );
 }

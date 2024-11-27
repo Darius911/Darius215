@@ -38,10 +38,12 @@ export default function Card() {
 
   return (
     <>
-    <p>{data.userId}</p>
-    <p>{data.id}</p>
-    <p>{data.title}</p>
-    <p>{data.body}</p>
+    <div>
+      <h2><img className="bd-placeholder-img rounded-circle" width="140" height="140" role="img" src={data.avatar_url} alt="" /></h2>
+      <p>log name : {data.login}</p>
+      <p>user_view_type : {data.user_view_type}</p>
+    </div>
+    
   </>
   );
 }
