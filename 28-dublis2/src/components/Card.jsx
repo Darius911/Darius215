@@ -48,12 +48,7 @@ export default function Card() {
             />
             <h2 className="fw-normal">{post.username}</h2>
 
-            <p>
-              <Link className="btn btn-secondary" to={`/posts/${post.id}`}>
-                view detailds
-              </Link>
-            </p>
-          </div>
+            </div>
         );
       })}
     </>
