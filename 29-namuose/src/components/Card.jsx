@@ -9,9 +9,7 @@ export default function Card() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users"
-        );
+        const response = await fetch(`https://api.github.com/users`);
         const data = await response.json();
 
         setData(data);
@@ -38,24 +36,11 @@ export default function Card() {
       {data.map((post) => {
         return (
           <div key={post.id} className="col-lg-4">
-            <img
-              className="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              role="img"
-              src={post.avatar_url}
-              alt=""
-            />
-            <h2 className="fw-normal">{post.username}</h2>
-
+            <img className="bd-placeholder-img rounded-circle" width="140" height="140" role="img"  src={post.avatar_url} alt="" />
+            <h2 className="fw-normal">{post.login}</h2>
+            
             <p>
-<<<<<<< HEAD
-              <Link className="btn btn-secondary" to={`/posts/${post.id}`}>
-                view detailds
-              </Link>
-=======
-            <a className="btn btn-secondary">view detailds</a>
->>>>>>> 63352fde540272a28f5105ffd4cb045e22809ba6
+            <Link className="btn btn-secondary" to={`/posts/${post.id}`}>view detailds</Link>
             </p>
           </div>
         );

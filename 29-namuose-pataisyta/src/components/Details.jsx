@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router";
+
+import { useParams } from "react-router";
 
 export default function Card() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users"
+          `https://api.github.com/users/${id}`
         );
         const data = await response.json();
 
@@ -35,22 +38,12 @@ export default function Card() {
 
   return (
     <>
-      {data.map((post) => {
-        return (
-          <div key={post.id} className="col-lg-4">
-            <img
-              className="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              role="img"
-              src={post.avatar_url}
-              alt=""
-            />
-            <h2 className="fw-normal">{post.username}</h2>
-
-            </div>
-        );
-      })}
-    </>
+    <div>
+      <h2><img className="bd-placeholder-img rounded-circle" width="140" height="140" role="img" src={data.avatar_url} alt="" /></h2>
+      <p>log name : {data.login}</p>
+      <p>user_view_type : {data.user_view_type}</p>
+    </div>
+    
+  </>
   );
 }
