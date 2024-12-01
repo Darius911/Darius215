@@ -19,6 +19,7 @@ function App() {
       location={info.location}
       logo={info.logo}
       
+      
      />)}
     
     </>

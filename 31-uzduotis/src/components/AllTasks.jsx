@@ -49,18 +49,20 @@ export default function AllTasks() {
   return (
     <>
       <table className="table table-striped">
+        <thead>
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>Tasks</th>
+          <th>Due date</th>
         </tr>
+        </thead>
         <tbody>
           {data.map((task) => {
             return (
               <tr key={task.id}>
                 <td>{task.id}</td>
                 <td>{task.name}</td>
-                <td>{task.dueDate}</td>
+                <td>{task.date}</td>
                 <td>
                   <Link to={`/tasks/${task.id}`}>Edit</Link>
                 </td>

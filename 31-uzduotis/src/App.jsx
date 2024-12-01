@@ -3,6 +3,7 @@ import "./App.css";
 import TasksForm from "./components/TasksForm";
 import AllTasks from "./components/AllTasks";
 import EditTasks from "./components/EditTasks";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
       <main>
         
       <Routes>
-        
+      <Route
+        path="/"
+        element={<Home/>}
+        />
 
         <Route
         path="/registerTasks"
@@ -38,7 +42,7 @@ function App() {
         element={<AllTasks/>}
         />
       <Route
-        path="/tasks:id"
+        path="/tasks/:id"
         element={<EditTasks/>}
         />
 

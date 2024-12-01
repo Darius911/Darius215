@@ -15,6 +15,7 @@ export default function Card(infoProps){
               <p>{infoProps.postedAt}</p>
               <p>{infoProps.contract}</p>
               <p>{infoProps.location}</p>
+              
             </div>
           </div>
         </div>
