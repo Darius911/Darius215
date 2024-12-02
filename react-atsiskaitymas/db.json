@@ -1,0 +1,36 @@
+{
+  "books": [
+    {
+      "title": "testas",
+      "author": "kitas",
+      "category": "Drama",
+      "price": "7",
+      "cover": "https://vaga.lt/image/cache/wp/gj/data/coveriai/42752857-320x470.webp",
+      "id": "7951"
+    },
+    {
+      "id": "5621",
+      "title": "asdasdasd",
+      "author": "asdasdas",
+      "category": "Drama",
+      "price": "1",
+      "cover": "https://vaga.lt/image/cache/wp/gj/data/coveriai/42752618-320x470.webp"
+    },
+    {
+      "id": "b76b",
+      "title": "sadasda",
+      "author": "asdasd",
+      "category": "Proza",
+      "price": "21",
+      "cover": "https://vaga.lt/image/cache/wp/gj/data/coveriai/42752631-320x470.webp"
+    },
+    {
+      "title": "sadasdasd",
+      "author": "asdasdas",
+      "category": "Proza",
+      "price": "20.01",
+      "cover": "https://vaga.lt/image/cache/wp/gj/data/coveriai/42752618-320x470.webp",
+      "id": "5ae1"
+    }
+  ]
+}
